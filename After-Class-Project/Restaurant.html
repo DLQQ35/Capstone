@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Restaurant</title>
+        <style>
+            body{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h1{
+                text-align: center;
+            }
+             .topnav{
+                overflow:hidden;
+                background-color:lightgrey;
+            }
+            .topnav a{
+                float:left;
+                color:green;
+                text-align:center;
+                padding:14px 16px;
+                text-decoration:none;
+                font-size:17px;
+            }
+            .topnav a:hover{
+                background-color:lightgrey;
+                color:black;
+            }
+            .topnav a.active{
+                background-color:grey;
+                color:green;
+            }
+             .slidebar{
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                height:300px;
+            }
+            .imagess{
+                display:none;
+                max-height:100%;
+                max-width: 100%;
+            }
+        </style> 
+    </head>
+    <body>
+        <div class="topnav">
+            <a href="Index.html">Home</a>
+            <a href="Menu.html">Menu</a>
+            <a href="Reservations.html">Reservations</a>
+            <a href="About.html">About</a>
+        </div>
+        <h1>The Onyx Room</h1>
+        <p>Welcome to our charming and cozy restaurant, The Onyx Room. We have a wide variety of dishes that cater to all tastes, from classic Italian cuisine to modern European favorites. Our menu is always updated with the latest ingredients and delicious dishes. Enjoy your meal and have a great time!</p>
+        <div class="slidebar">
+            <img class="imagess"src="download.jpeg" alt="Slide 1">
+            <img class="imagess"src="Premium.jpg" alt="Slide 2">
+            <img class="imagess"src="Restaurant-Interior.avif" alt="Slide 3">
+        </div>
+
+        <script>
+             var index = 0;
+                function carousel() {
+                    var i;
+                    var x = document.getElementsByClassName("imagess");
+
+                    for (i = 0; i < x.length; i++) {
+                        x[i].style.display = "none";
+                    }
+                    index++
+                    if (index > x.length) {
+                        index = 1;
+                    }
+                    x[index - 1].style.display = "block";
+                    setTimeout(carousel, 2000);
+                }
+                carousel();
+        </script>
+
+    </body>
+</html>
