@@ -27,15 +27,59 @@
                 background-color:grey;
                 color:green;
             }
+            h2{
+                text-align: center;
+            }
+            h1{
+                text-align: center;
+            }
+            .slider{
+                display:flex;
+                justify-content: center;
+                align-items:center;
+                height:300px;
+            }
+            .imagess{
+                display:none;
+                max-height:100%;
+                max-width: 100%;
+            }
         </style>
     </head>
     <body>
-        <h1></h1>
         <div class="topnav">
             <a class="active" href="#home">Home</a>
             <a href="History.html">History</a>
             <a href="Algorithms.html">Algorithms</a>
             <a href="Cubes.html">Cubes</a>
         </div>
+        <br>
+        <h2>Some Cubes</h2>
+        <div class="slider">
+            <img class="imagess" src="Others/Collection.jpeg" height="400" width="500" alt="Slide 1">
+            <img class="imagess" src="Others/X-Man.jpeg" height="400" width="500" alt="Slide 2">
+            <img class="imagess" src="Others/Moyu.jpeg" height="400" width="390" alt="Slide 3">
+            <img class="imagess" src="Others/Gan.jpeg" height="400" width="300" alt="Slide 4">
+            <img class="imagess" src="Others/Gan1.jpeg" height="400" width="450" alt="Slide 5">
+        </div>
+
+        <script>
+            var index = 0;
+            function carousel(){
+                var i;
+                var x = document.getElementsByClassName("imagess");
+
+                for(i = 0; i < x.length; i++){
+                    x[i].style.display = "none";
+                }
+                index++
+                if(index > x.length){
+                    index = 1;
+                }
+                x[index - 1].style.display = "block";
+                setTimeout(carousel, 2000);
+            }
+            carousel();
+        </script>
     </body>
 </html>
